@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outerdiv{
+            border:  10px solid orange;
+            width:  0 auto;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        #middlediv{
+            border:  10px solid purple;
+            width:  0 auto;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        #innerdiv{
+            border:  10px solid green;
+            width:  0 auto;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script src="./JsQuerstions.js"></script>
+
+
+    <div id="outerdiv">
+        OUTER
+        <div id="middlediv">
+            MIDDLE
+            <div id="innerdiv">
+                INNER
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("outerdiv").addEventListener("click", ()=>{ console.log("Outer div has been clicked")}, true)
+
+        document.getElementById("middlediv").addEventListener("click", ()=>{ console.log("middle div has been clicked")}, true)
+
+        document.getElementById("innerdiv").addEventListener("click", ()=>{
+            console.log("Inner div has been clicked")
+        })
+</script>
+</body>
+</html>
