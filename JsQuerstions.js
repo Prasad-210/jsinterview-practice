@@ -404,4 +404,123 @@ button = null;
 
 
 //todo Shallow copy and Deep copy
-// *? jenekere
+
+
+
+
+// todo Callback function
+
+// Example 1 General Function
+
+// function greet(name, cb){
+//     cb();
+//     console.log(`Hello ${name}`);
+//     cb();
+// }
+
+//callback
+// function welcome(){
+//     console.log("Welcome to JavaScript bhai !!");  
+// }
+
+
+// greet("Name", welcome)
+
+//*? output
+//  Welcome to JavaScript bhai !!
+//  Hello Name
+//  Welcome to JavaScript bhai !!
+
+
+
+//Example 2 - callback with async function
+
+// function printInfo(name, callbackfn){
+
+//     //async fn 
+//     setTimeout(function(){
+//         console.log(`The professional details of : ${name}`);
+//         callbackfn("Hello dada............")
+//     },6000)
+
+    // callbackfn("Hello dada............") // if the direct call callback function without async then it will print first then setTimeout console.log
+
+// }
+
+
+// //callback
+
+// function displayMsg(msg){
+//     console.log(msg)
+// }
+
+// printInfo("Naveen", displayMsg)
+
+
+
+//Example 3
+
+// function fetchUserData(userId, callback){
+//     setTimeout(()=>{
+         
+//         const users = {
+//             1: {name:"Jane"},
+//             2:{name:"dost"}
+//         }
+
+//         const user = users[userId]
+
+//         if(user){
+//            callback( null, user) 
+//         }else{
+//             callback("The user not found ", null)
+//         }
+//     },1000)
+// }
+
+
+// const handeleUserData =(err, user)=>{
+//   if(err){
+//     console.error("Error: ", err)
+//   }else{
+//     console.log("user: ", user)
+//   }
+// }
+
+
+// fetchUserData(2, handeleUserData)
+
+
+
+//todo Flatten Array
+
+// input = [[1,2],[3,4]]
+// output =[1,2,3,4]
+
+
+// function flattendArray(arr){
+//     const result = arr.reduce((acc, curValue)=>{
+//         return acc.concat(curValue)
+//     }, [])
+//     return result
+// }
+
+//  let arr = [[1,2],[3,4]]
+// console.log(flattendArray(arr))
+
+
+
+// function flattendArray(arr){
+//     const result = arr.reduce((acc, curValue)=>{
+//         return acc.concat(Array.isArray(curValue) ? flattendArray(curValue) : curValue)
+//     }, [])
+//     return result
+// }
+
+//  let arr2 = [1,2,[4,6, [3,4]]]
+// console.log(flattendArray(arr2))
+
+
+
+
+//todo Throttling and Debouncing
