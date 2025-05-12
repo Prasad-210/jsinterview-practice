@@ -1,0 +1,387 @@
+
+
+1. "What is JavaScript?"
+
+"JavaScript is a high-level, interpreted programming language primarily used for adding interactivity and dynamic behavior to web pages. It runs in the browser and allows developers to create features like form validation, content updates without page reloads (via AJAX), animations, and more. JavaScript is a core technology of the web, alongside HTML and CSS."
+
+"JavaScript is a programming language used to make websites interactive. It runs in the browser and lets us do things like show or hide content, respond to button clicks, update data without reloading the page, and much more.
+
+It works with HTML and CSS — HTML builds the structure, CSS handles styling, and JavaScript adds behavior and logic."
+
+
+"High-level" means JavaScript is closer to human language and easier to read and write.
+It hides many of the complex details like memory management or working directly with the hardware, which you’d have to handle in low-level languages like C or Assembly.
+
+================================================================================================================================
+
+
+2. Where Can You Add <script> in HTML?
+
+"There are three main ways to include JavaScript in an HTML file:
+
+In the <head>
+
+At the end of the <body>
+
+In the <head> using defer or async attributes
+
+
+Each has different effects on page load and performance."**
+
+
+
+🟦 1. Placing <script> in the <head> (Without defer or async)
+
+<head>
+  <script src="script.js"></script>
+</head>
+
+✅ Explanation:
+"This loads the script immediately before the HTML body is even parsed.
+The browser stops building the page until the script is fully downloaded and executed."
+
+🔍 Pros:
+The script loads early.
+
+Useful if your JavaScript must run before the page loads (very rare).
+
+⚠️ Cons:
+Blocks rendering — the browser pauses HTML rendering until the script finishes.
+
+Slower page load for the user.
+
+✅ Say in interview:
+"Putting the script in the <head> without defer is not ideal unless absolutely necessary, because it blocks the page from loading."
+
+
+🟦 2. Placing <script> at the end of <body> (Best Traditional Practice)
+
+<body>
+  <!-- HTML content -->
+  <script src="script.js"></script>
+</body>
+
+✅ Explanation:
+"This ensures all HTML content loads first. The browser parses and displays the page, then loads the JavaScript."
+
+👍 Pros:
+Page content appears faster for users.
+
+No need to wait for JavaScript before showing content.
+
+Safer for manipulating DOM because it’s already loaded.
+
+👎 Cons:
+Slight delay before the script starts, but usually not noticeable.
+
+✅ Say in interview:
+"This is the most common and recommended method when you don’t use defer or async — because it avoids blocking rendering and ensures the DOM is ready."
+
+
+🟦 3. Placing <script> in the <head> with defer or async
+
+<!-- Defer -->
+<script src="script.js" defer></script>
+
+<!-- Async -->
+<script src="script.js" async></script>
+
+✅ Using defer:
+"The script downloads in the background while HTML is being parsed, and runs after the DOM is fully loaded."
+
+✅ Best for scripts that depend on the DOM.
+
+✅ Can use multiple defer scripts — they run in order.
+
+⚠️ Using async:
+"The script also loads in the background, but it runs immediately once it's ready, even if HTML parsing is not finished."
+
+🚫 Not ideal for scripts that interact with DOM elements.
+
+🚫 Scripts may run out of order if multiple async scripts are used.
+
+================================================================================================================================
+
+🔐 Core Topics: Login Flow + Session + Auth
+
+
+✅ 1. How does the login flow work in your application?
+
+🔥 Sample Answer (Practical Style):
+"In our application, when a user enters their credentials, we send a POST request to the authentication API with the email and password.
+If valid, the backend returns a JWT (JSON Web Token) or session token. We store this token either in localStorage or sessionStorage based on the session type. We then use this token to authenticate future API calls by attaching it to the Authorization header (usually Bearer <token>)."
+
+✅ You can add:
+
+We protect routes using route guards or middleware (React Router, Express middleware).
+
+We store the token in memory or sessionStorage if we need the session to expire on tab/browser close.
+
+✅ 2. What’s the difference between localStorage, sessionStorage, and cookies? When do you use each?
+
+| Feature           | localStorage                              | sessionStorage                            | cookies                                       |
+|------------------|--------------------------------------------|-------------------------------------------|-----------------------------------------------|
+| Storage limit    | ~5-10MB                                    | ~5MB                                      | ~4KB                                          |
+| Expiration       | Never (unless manually cleared)            | On tab/browser close                      | Can set expiry (manual or server)            |
+| Accessible by    | JavaScript only                            | JavaScript only                           | Server & JavaScript                          |
+| Use Case         | Remember user settings                     | Temporary data (e.g., form)               | Auth tokens if you want HTTP-only            |
+
+🔥 Interview Tip:
+"For security-sensitive data like tokens, we avoid storing in localStorage because it’s accessible via JS (XSS risk). We sometimes use HTTP-only cookies for that reason."
+
+✅ 3. How do you handle authentication and authorization in your app?
+🔥 Answer Like an Engineer:
+"Authentication is handled via a login API that returns a JWT. We validate the user on the backend and sign the token.
+For authorization, the frontend checks the user's role/permissions (included in token or fetched from user profile) and conditionally renders routes, buttons, or features.
+The backend also enforces this through middleware that checks the token and access level."
+
+🧠 Example:
+
+Role-based UI rendering (if (user.role === 'admin') { showAdminPanel() })
+
+Backend route guard (isAdmin middleware)
+
+✅ 4. What is JWT? How do you use it in your app?
+"JWT (JSON Web Token) is a secure way to represent claims between client and server. It's a string with 3 parts: Header, Payload, and Signature.
+The payload usually includes user data like id, email, role, and expiration.
+After login, we store the token and attach it to every API request's Authorization header."
+
+🧠 Real-world Use:
+
+axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+✅ 5. How do you secure tokens and user sessions?
+"We avoid storing tokens in localStorage due to XSS risk.
+For more secure apps, we use HTTP-only cookies which are not accessible by JavaScript.
+We also implement session expiration, token refresh logic, and logout on inactivity or tab close using event listeners."
+
+✅ 6. How does logout work in your app?
+"We clear the token from storage (localStorage, sessionStorage, or cookies) and redirect the user to the login page.
+On the backend, if using refresh tokens, we also invalidate the token to prevent reuse."
+
+✅ 7. What are route guards or protected routes in React?
+"We use a higher-order component or wrapper that checks if the user is authenticated before rendering a route.
+If not, it redirects to login."
+
+🧠 Example:
+
+<Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
+✅ 8. What’s the difference between authentication and authorization?
+
+Term	Meaning	Example
+Authentication	Verifying who the user is	Login with email & password
+Authorization	Checking what they can access	Can this user access admin panel?
+"Authentication is about identity.
+Authorization is about access control."
+
+✅ 9. How do you handle token expiration?
+"We decode the token on the client using libraries like jwt-decode to check the exp time.
+If it’s near expiry, we trigger a token refresh using a refresh token stored in a secure HTTP-only cookie.
+If expired, we log the user out automatically."
+
+✅ 10. What are common security practices you follow?
+Use HTTPS only
+
+Store tokens securely (prefer HTTP-only cookies)
+
+Avoid XSS by sanitizing inputs
+
+Enable CORS securely (not *)
+
+Validate everything on the server
+
+Implement rate limiting, 2FA, and CAPTCHAs if needed
+
+
+=====================================================================================================
+💼 Banking Domain Login Flow & Session Management – Interview Questions & Answers
+
+
+✅ 1. Can you explain the login flow in your banking React app?
+"Sure. In our banking app, we have a secure login page where the user enters their credentials. On submit:
+
+We send a POST request to the backend auth API.
+
+If credentials are valid, the backend responds with a JWT token and a refresh token, often set as HTTP-only cookies for security.
+
+The JWT token contains user info like id, role, and expiration.
+
+The frontend stores minimal data (e.g., name, userId) in React state or Context.
+
+We protect sensitive pages (e.g., Dashboard, Transactions) with route guards."
+
+✅ 2. How do you store and manage the session/token? Why not use localStorage?
+"Since we work in a banking domain, security is a top priority.
+We avoid localStorage or sessionStorage for token storage to prevent XSS attacks.
+Instead:
+
+The access token is stored in memory (state or context).
+
+The refresh token is stored in HTTP-only secure cookies (set by the backend).
+This way, tokens are safe from JavaScript access and can’t be stolen via XSS."
+
+✅ 3. What are protected routes and how do you handle them in React?
+"We use React Router and implement a ProtectedRoute component.
+It checks if the user is authenticated (by validating token from context or API).
+If not, it redirects to login.
+
+Example:
+<Route
+  path="/dashboard"
+  element={
+    isAuthenticated ? <Dashboard /> : <Navigate to="/login" />
+  }
+/>
+We also support role-based rendering, e.g., only admin role can access User Management."
+
+✅ 4. How do you handle authentication and authorization in your banking app?
+"Authentication is done via secure login — verified using bcrypt and OAuth2 in some flows.
+Authorization is based on user roles returned in the token (e.g., customer, bank_staff, admin).
+We use this:
+
+On frontend: for conditional rendering of menus/features.
+
+On backend: via role-based middleware to protect APIs.
+
+Example:
+
+
+if (user.role === 'admin') {
+  showAdminPanel();
+}
+✅ 5. What happens after login? How do you manage navigation?
+"Once login is successful:
+
+We decode the token using jwt-decode.
+
+Save basic user info in React Context.
+
+Redirect to dashboard using useNavigate().
+
+Set the axios default headers with the token:
+
+axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+Load dashboard data via API."
+
+✅ 6. What is the difference between authentication and authorization in your app?
+
+Concept	Meaning	Banking Example
+Authentication	Verifying who the user is	Login with ID & OTP
+Authorization	What the user is allowed to do	Can approve loans only if role is manager
+"We authenticate users using credentials & OTP, and authorize actions based on their role."
+
+✅ 7. How do you handle token expiration and refresh flow?
+"JWTs are short-lived (e.g., 15 mins). We use a refresh token mechanism:
+
+When the token expires, we send a silent request to /refresh-token.
+
+The backend verifies the refresh token (from the secure cookie) and returns a new access token.
+
+We retry the original request after refreshing."
+
+🧠 Add:
+
+"We also log out the user if refresh fails or token is invalid."
+
+✅ 8. What security measures have you implemented?
+"In a banking app, we follow these:
+
+Tokens in HTTP-only secure cookies.
+
+CORS configured properly.
+
+Input validation on frontend + backend.
+
+Rate limiting and IP whitelisting on backend.
+
+Logout on inactivity (using setTimeout, setInterval, or IdleTimer).
+
+Use of helmet, CSRF tokens, and strict Content-Security-Policy headers."
+
+✅ 9. What is the logout process in your app?
+"Logout involves:
+
+Clearing token from memory/state.
+
+Calling a /logout API to clear refresh token from backend.
+
+Redirecting to login.
+
+Clearing cached user data (e.g., using useContext, redux-persist, or react-query cache clear)."
+
+✅ 10. How do you differentiate between customer, employee, and admin roles in your app?
+"We use role-based access control (RBAC). The user’s role is embedded in the token payload:
+
+{
+  "id": 123,
+  "role": "admin"
+}
+We render UI and restrict access based on this. Example:
+
+Customer sees only their accounts.
+
+Staff sees all customer requests.
+
+Admin can manage users."
+
+✅ 11. What happens on page refresh? How do you persist user data?
+"We decode the JWT and initialize user state using:
+
+React Context or Redux
+
+OR trigger /get-current-user API if using HTTP-only cookies.
+
+If token is expired, we refresh it or redirect to login."
+
+✅ 12. How do you detect inactivity and auto-logout?
+"We track events like mousemove, keydown, scroll, and reset a timer on each activity.
+If no activity is detected for X mins, we clear the token and log out the user."
+
+🧠 Tool: react-idle-timer
+
+🎁 BONUS: Real Project Tip You Can Add
+"In our banking dashboard, users have access to features based on their role. We used a custom useAuth() hook that checks login status and role from decoded token. Also, we restricted access to all pages using ProtectedRoute components, and used React Context for user info to avoid prop drilling."
+
+
+🔍 What is "Decode" in the Login/Auth Flow?
+When we say "decode", we’re usually referring to decoding a JWT (JSON Web Token) to extract user information on the frontend — without needing to call an API again.
+
+🧠 Why?
+Because JWTs are self-contained: they carry user data like userId, email, role, and exp (expiration) in the token itself. So, instead of calling an extra "get user" API, we can just decode the token and use the values directly.
+
+
+
+🟢 When to Use decode?
+✅ After login, to:
+
+Store user data in React Context / Redux.
+
+Set role-based UI (like showing admin panel).
+
+Start a token expiration timer based on exp.
+
+✅ On page reload, to:
+
+Rehydrate user session (if token exists in memory or localStorage).
+
+Avoid extra API calls.
+
+
+
+=================================================================================================================================================
+
+
+What is Client-Side vs Server-Side?
+
+
+=================================================================================================================================================
+if(true){
+    variable = 10;
+}
+
+console.log(variable)
+
+
+
+
+
+

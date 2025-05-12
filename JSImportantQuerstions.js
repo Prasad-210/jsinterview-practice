@@ -524,3 +524,30 @@ button = null;
 
 
 //todo Throttling and Debouncing
+
+
+//todo map function 
+
+// const words = ['react', 'script', 'interview', 'style', 'javascript']
+
+
+// const answer = words.filter((word)=>{
+//    return  word.length > 6
+// })
+
+// console.log({answer})
+// console.log({words})
+
+
+//*? using without filter
+
+// let answers = [];
+
+// for(let i=0; i < words.length; i++){
+//     // if(words[i].length > 6){
+//     //     answers.push(words[i])
+//     // }
+//     console.log(words[i])
+// }
+
+// // console.log(answers )
