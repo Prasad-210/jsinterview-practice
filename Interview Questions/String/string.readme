@@ -1,0 +1,65 @@
+
+
+✅ Basic-Level Questions:
+Reverse a string.
+
+Check if a string is a palindrome.
+
+Count the number of vowels in a string.
+
+Check if two strings are anagrams.
+
+Count how many times each character appears in a string.
+
+Remove duplicate characters from a string.
+
+Count the number of words in a string.
+
+Capitalize the first letter of each word in a string.
+
+Find the longest word in a sentence.
+
+Check if a string contains only digits.
+
+✅ Intermediate-Level Questions:
+Find the first non-repeating character.
+
+Check if one string is a rotation of another.
+
+Find the most frequent character in a string.
+
+Check if a string has all unique characters.
+
+Replace all spaces in a string with "%20" (like in URLs).
+
+Implement your own trim() function (remove leading/trailing spaces).
+
+Convert a string to title case (e.g., "hello world" → "Hello World").
+
+Count how many times each vowel appears in a string.
+
+Reverse the order of words in a sentence.
+
+Check if a string is a subsequence of another.
+
+✅ Advanced-Level Questions:
+Implement a string compression function (e.g., "aabcccccaaa" → "a2b1c5a3").
+
+Group an array of strings into anagrams.
+
+Find the longest substring without repeating characters.
+
+Check if a string is a valid shuffle of two other strings.
+
+Implement a function to perform basic string pattern matching (like indexOf()).
+
+Find the longest common prefix among an array of strings.
+
+Implement a function to check balanced parentheses in a string.
+
+Remove all characters from string that appear more than once.
+
+Find the first repeated character in a string.
+
+Count the frequency of all words in a sentence.
+

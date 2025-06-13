@@ -98,7 +98,8 @@
 
 // greet();
 
-// //IIFE
+
+//todo  IIFE
 
 // (function(){
 //     console.log("Hello ")
@@ -110,7 +111,7 @@
 // })()
 
 
-//closure
+//todo closure
 
 // function outerfunction(){
 //     const test = " I am outer fn vaiable";
@@ -162,7 +163,9 @@
 // console.log(myAccount.balance)
 
 
-//setTimeout
+
+
+//todo setTimeout
 
 // const timer = setTimeout(()=>{
 //     console.log("timer should be run after 2 seconds")
@@ -364,7 +367,7 @@
 // console.log(metadata.get(button)); // { clicked: false }
 
 // // Now remove the button reference
-button = null;
+// button = null;
 
 // ✅ The metadata entry will be garbage collected automatically
 
