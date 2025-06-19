@@ -67,7 +67,7 @@
 // console.log(diameter)
 
 
-// // Now by using HOF with map
+//  Now by using HOF with map
 
 // const calculate = (arr, logic)=>{
 //   return arr.map(logic)
@@ -80,7 +80,7 @@
 
 // const getDiameter = (r) => r*r;
 
-// // const getVolume = (r) => (4/3) * Math.PI * r * r* r 
+//  const getVolume = (r) => (4/3) * Math.PI * r * r* r 
 // const getVolume = (r) => +( (4 / 3) * Math.PI * Math.pow(r, 3) ).toFixed(2);
 
 // console.log("Areas", calculate(redius, getArea))
@@ -228,7 +228,7 @@
 
 
 
-//call apply bind
+//todo call apply bind
 
 // function cook(ing1,ing2,ing3){
 //     console.log(`The person ${this.name} order a dish with ingredient ${ing1} , ${ing2} and ${ing3}`)
@@ -248,7 +248,7 @@
 // const cookForAdam = cook.bind(person, "rice", "chaval", "dal");
 
 // console.log(typeof cookForAdam)
-// // cookForAdam()
+//cookForAdam()
 
 
 
@@ -520,8 +520,8 @@
 //     return result
 // }
 
-//  let arr2 = [1,2,[4,6, [3,4]]]
-// console.log(flattendArray(arr2))
+    //  let arr2 = [1,2,[4,6, [3,4]]]
+    // console.log(flattendArray(arr2))
 
 
 
