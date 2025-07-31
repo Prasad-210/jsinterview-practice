@@ -1,11 +1,21 @@
 // Understanding JavaScript Object Methods
-// The Object global object provides common utilities for all JavaScript objects. These methods are used for tasks such as creating objects, manipulating properties, checking object types, and comparing objects.
+// The Object global object provides common utilities for all JavaScript objects. 
+// These methods are used for tasks such as creating objects, manipulating properties, 
+// checking object types, and comparing objects.
 
 // Key Concepts Before We Start:
-// Static Methods: Most Object methods are static, meaning you call them directly on the Object constructor (e.g., Object.keys(), Object.assign()), not on an object instance (myObject.keys() would cause an error).
-// Properties vs. Values: When dealing with object properties, remember that properties have keys (names) and values.
-// Enumerable Properties: Many methods only deal with enumerable properties (those that show up when you loop with for...in or Object.keys()). Non-enumerable properties (like those inherited from the prototype chain or some built-in properties) are often ignored.
-// Shallow vs. Deep Operations: Be aware that some operations (like copying) are shallow. If an object contains other objects, only the references to those nested objects are copied, not the nested objects themselves.
+// Static Methods: Most Object methods are static, meaning you call them directly on the Object constructor 
+// (e.g., Object.keys(), Object.assign()), not on an object instance (myObject.keys() would cause an error).
+// Properties vs. Values: When dealing with object properties,
+// remember that properties have keys (names) and values.
+// Enumerable Properties: Many methods only deal with enumerable properties 
+// (those that show up when you loop with for...in or Object.keys()). 
+// Non-enumerable properties (like those inherited from the prototype chain or some built-in properties) are often ignored.
+// Shallow vs. Deep Operations: Be aware that some operations (like copying) are shallow.
+// If an object contains other objects, only the references to those nested objects are copied, 
+// not the nested objects themselves.
+
+
 // I. Methods for Creating Objects
 // Object.create()
 // Purpose: Creates a new object, using an existing object as the prototype of the newly created object. This is fundamental for prototypal inheritance.

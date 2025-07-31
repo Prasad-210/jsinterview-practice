@@ -1,72 +1,543 @@
-// const numbers = [123,45,5,32,32,22,22,45,67];
+// 
 
-// const newNumbers = [...new Set(numbers)];
 
-// console.log({newNumbers});
-// console.log({numbers});
+// const animal = {
+//   eats: true,
+//   walk() {
+//     console.log('Animal walks');
+//   }
+// };
 
-//===============================
 
-// const employees = {
-//     id:1,
-//     name:"Rama",
-//     age:23,
-//     salary :"25k"
+// const dog = Object.create(animal)
+// dog.bark = true
+// console.log(dog)
+
+
+// const userProfile = {
+//   name: 'Bob',
+//   email: 'bob@example.com'
+// };
+// const result1 = userProfile.hasOwnProperty('name');
+// const result2 = userProfile.hasOwnProperty('ages')
+
+// console.log("output:- ",result1, result2);
+
+
+// for( const key in userProfile){
+//     if( userProfile.hasOwnProperty(key)){
+//         console.log(`Key ${key} :: ${userProfile[key]}`)
+//     }else{
+//         console.log(`Key:- ${key}`)
+//     }
 // }
 
 
-// delete employees.age;
-
-// console.log({employees});
-// console.log(employees.length); // undefined  // object does not have the length proerty as array has
-
-// console.log(Object.keys(employees).length)  //lenth // its basically give you an array of the keys of employyes obj
 
 
-// alternative way
-
-// const {age, ...restelements}= employees;
-
-// console.log(restelements);
+// function debounce(func, delay){
 
 
+//     let timerId ;
 
-//===============================
+//     return function(...args){
 
+//         const context = this;
 
+//         clearTimeout(timerId)
 
-// const numbers = [123,45,5,32,32,22,22,45,67];
+//         timerId = setTimeout(()=>{
+//             func.apply(context, args)
+//         }, delay)
 
-// const employees = {
-//     id:1,
-//     name:"Rama",
-//     age:23,
-//     salary :"25k"
+//     }
 // }
 
-// const myVar = 18;
-
-// console.log(Array.isArray(numbers));
-// console.log(Array.isArray(employees));
-// console.log(Array.isArray(myVar));
 
 
-//===============================   
+// function search(query){
+//   console.log(`The user search : ${query}`)
+// }
+
+// const debounceSearch = debounce(search, 500)
+
+// debounceSearch("a")
+// debounceSearch("ap")
+// debounceSearch("appl")
+// debounceSearch("apple i phone")
 
 
-const employees = {
-    id:1,
-    name:"Rama",
-    age:23,
-    salary :"25k"
-}
+//debouncing
+
+// function debounce(func, delay){
+//     let timeoutId;
+
+//     return function(...args){
+
+//         const context = this;
+
+//         clearTimeout(timeoutId)
+
+//         timeoutId = setTimeout(()=>{
+//             func.apply(context, args)
+//         }, delay)
+//     }
+
+// }
 
 
-// const result = Object.entries(employees);
-// console.log(result)
+// function search(query){
+//     console.log(`Searching for query : ${query}`)
+// }
 
 
-// Object.entries(employees).forEach(([key,value])=>{
-//     console.log(`${key}::: ${value}`);
+// const debounceSearch = debounce(search, 500)
+
+// debounceSearch("ap")
+// debounceSearch("app")
+// debounceSearch("apple")
+// debounceSearch("apple i phone")
+
+
+// function debounce(func , delay){
+
+//     let timeoutId;
+
+//     return function(...args){
+
+//         const context = this;
+
+//         clearTimeout(timeoutId);
+
+//         timeoutId = setTimeout(()=>{
+//              func.apply(context,args)
+//         }, delay)
+//     }
+
+// }
+
+// function search(query){
+//     console.log(`Searching for queryqq : ${query}`)
+// }
+
+
+// const debounceSearch = debounce(search, 500)
+
+// debounceSearch("ap")
+// debounceSearch("app")
+// debounceSearch("appl")
+// debounceSearch("apple i phone")
+
+
+
+
+// function throttle(func, limit){
+//    let inThrottle;
+
+//    return function(...args){
+//       const context = this;
+
+//       if(!inThrottle){
+//          func.apply(context,args)
+
+//          inThrottle = true;
+
+//          setTimeout(()=>{
+//             inThrottle = false
+//          }, limit)
+//       }
+//    }
+// }
+
+
+// function hanldeButtonClick(){
+//    console.log("Button Clicked")
+// }
+
+
+// const throttleFunClickHandler = throttle(hanldeButtonClick, 2000)
+
+
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+
+
+// setTimeout(()=>{
+//  throttleFunClickHandler()   
+// }, 2400)
+// setTimeout(()=>{
+//  throttleFunClickHandler()   
+// }, 2500)
+
+//throttling
+
+// function throttle(func, limit){
+
+
+//     let inThrottle ;
+
+//     return function(...args){
+
+//         const context = this;
+
+//         if(!inThrottle){
+//             func.apply(context,args);
+//             inThrottle = true;
+
+//             setTimeout(()=>{
+//                 inThrottle = false;
+//             }, limit)
+//         }
+//     }
+// }
+
+// function handleButtonClick(){
+//   console.log(`Button Clicked`);
+// }
+
+
+// const throttleFunClickHandler = throttle(handleButtonClick, 2000)
+
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+// throttleFunClickHandler()
+
+
+// setTimeout(()=>{
+// throttleFunClickHandler()
+// },2400)
+
+// setTimeout(()=>{
+// throttleFunClickHandler()
+// },2500)
+
+
+
+// const redius = [2,4,6,8];
+
+
+
+// //calacualte circum
+
+
+// const circumfernce  = []
+
+
+// for( let i=0; i < redius.length ; i++){
+//     const circum = 2* Math.PI * redius[i]
+
+//     circumfernce.push(circum)
+// }
+
+
+// console.log(circumfernce)
+
+
+// const areafinal  = []
+
+
+// for( let i=0; i < redius.length ; i++){
+//     const area = Math.PI * redius[i] * redius[i]
+
+//     areafinal.push(area)
+// }
+
+
+// console.log(areafinal)
+
+// const diameter  = []
+
+
+// for( let i=0; i < redius.length ; i++){
+//     const dia = redius[i] * redius[i]
+
+//     diameter.push(dia)
+// }
+
+
+// console.log(diameter)
+
+
+
+//HOF
+
+// function calculate(arr, logic){
+//   return arr.map(logic)
+// }
+
+
+// const getArea = (r) =>  Math.PI * r * r
+// const getCircum = (r) =>  2* Math.PI * r 
+// const getDiam = (r) =>  r * r
+
+
+// console.log("area", calculate(redius, getArea) )
+// console.log("circum", calculate(redius, getCircum) )
+// console.log("diameter", calculate(redius,getDiam) )
+
+
+
+//iife
+
+// (function(){
+// console.log("Hii")
+// })()
+
+
+// //closure 
+
+// function outerFunc(){
+
+//     const outer = " I am outer variable";
+
+//     function InnerFun(){
+
+//         console.log( ` Inner ${outer}`)
+//     }
+
+//   InnerFun()
+// }
+
+
+// console.log(outerFunc())
+
+
+
+
+// const createBankAccount = (initialBalance) => {
+//    let balance = initialBalance;
+
+//    return {
+
+//     deposite : (amount)=>{
+//         balance += amount;
+
+//         console.log(`The deposite amount is ${amount}   tota;l balnmce is ${balance} `)
+//     },
+
+//     withdraw :  (amount)=>{
+//         balance -= amount;
+
+//         console.log(`The withdraw amount is ${amount}   total balnmce is ${balance} `)
+//     },
+
+//     getBalance : ()=>{
+//         console.log(`balance: ${balance}`)
+//     }
+
+//    }
+// }
+
+
+// const myAccount = createBankAccount(1000)
+
+
+// myAccount.withdraw(200)
+
+// console.log(myAccount.balance)
+
+
+
+
+//currying 
+
+
+// function sendEmail(from){
+//     return function (to){
+//             return function(subject){
+//                 return function (message){
+//                     return `Here From : ${from}
+//                     To : ${to}
+//                      Sub: ${subject}
+//                      message : ${message}
+//                     `
+//                 }
+//             }
+//     }
+// }
+
+
+
+// const fromSender = sendEmail("support@gmail.com")
+// const toReciecer = fromSender("to@user.com")
+
+// const subjectAdd = toReciecer("Welcom to on board")
+
+// const email = subjectAdd("Thanks  for sing up")
+
+
+// console.log(email)
+
+
+
+
+
+
+//Generator function
+
+// function* infiniteSequence(){
+//     let num = 1;
     
-// })
+//     while(true){
+//         yield num;
+//         num++
+//     }
+// }
+
+// const seq = infiniteSequence();
+
+// console.log(seq.next().value)
+// console.log(seq.next().value)
+
+
+
+// const dummyObj = {
+//     name : "Prasad",
+//     age:27,
+//     city:"Pusad"
+// } 
+
+// const output = Object.keys(dummyObj).length
+// console.log(output)
+
+
+// function countOccurences(str){
+//   return str.split("").reduce((acc, char)=>{
+//     acc[char] = (acc[char] || 0) + 1
+//     return acc
+//   }, {})
+// }
+
+// console.log(countOccurences('javascriptttt'))
+
+
+//==========================
+
+// function removeDuplicates(str){
+//    return str.split("").filter((char, index) =>{
+//     return str.indexOf(char) === index
+//    }).join('')
+// }
+
+
+// console.log(removeDuplicates("banana"))
+
+
+//==========================
+
+//todo Objects and Prototypes 
+
+// Object literal 
+
+// const Person = {
+//     name : "Dinesh",
+//     age:23,
+//     house:'Yes',
+//     city:"DattaPur",
+//     greet: function(){
+//         return `Hello Mahadev, located at ${this.city}`
+//     },
+//     get: ()=>{
+//      return `Hello ${this.name}`
+//     }
+// }
+
+
+// console.log(Person.age)        //23
+// console.log(Person.greet)     //[Function: greet]
+// console.log(Person.greet())  //Hello Mahadev, located at DattaPur
+// console.log(Person.get())    // Hello undefined  ===> As this is Arrow function it does not have its This binding.
+
+//========================================================================================================
+
+//todo How do you create objects in JavaScript? 
+
+
+//? Object Literal
+// const obj = {
+//     name: "Prasad",
+//     age:12
+// }
+
+// --------------------------------------------------------------------
+
+//? Constructor functions: 
+// function Person(name){
+//     this.name = name ;
+// }
+
+// const person = Person.name("John")
+
+// console.log("Person", person)      // Person { name: 'John' }
+// console.log("Person", person.name) // John
+
+// --------------------------------------------------------------------
+
+//? Object.create():
+
+// const dummyObj = { greet : function(){
+//     return "Hello"
+// }}
+
+// const obj = Object.create(dummyObj)
+// console.log(obj.greet())   // Hello
+
+
+// const dummyObj2 = {
+//     greet: function(name){
+//         return `Hello ${name}`
+//     }
+// }
+// const obj2 = Object.create(dummyObj2)
+// console.log(obj2.greet("Mithun"))
+
+
+// --------------------------------------------------------------------
+
+//?  ES6 Classes: 
+
+// class Person{
+//     constructor(name){
+//         this.name = name
+//     }
+// }
+// const person = new Person("John")
+// console.log(person.name) //john
+
+
+// --------------------------------------------------------------------
+
+//? factory function 
+
+// function createPerson(name){
+//     return {name}
+// }
+
+// const person = createPerson("Sasta")
+// console.log(person.name)  //Sasta
+
+
+
+//=========================================================================================
+
+//todo What is the prototype chain? 
+
+// const animal = {
+//     makeSound: function(){
+//         return "SOME SOUND"
+//     }
+// }
+// const dog = Object.create(animal);
+// dog.makeSound();  // SOME SOUND   //(inherited from animal) 
+
+// //to check prototype chain
+// console.log(Object.getPrototypeOf(dog) === animal);   //true
+
+// --------------------------------------------------------------------
+
+//todo How does inheritance work in JavaScript?

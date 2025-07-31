@@ -24,6 +24,8 @@
 
 // console.log(name,email,city, primarynum,companyDeatils);
 
+
+
 // 2. Adding and Updating an Array of Objects
 // Task
 // You have a list of users and need to:

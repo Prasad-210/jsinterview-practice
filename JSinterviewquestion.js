@@ -15,7 +15,7 @@
 
 // function reverseString(str){
 //    let reversed = "";
-//     for(i = str.length -1; i>=0; i--){
+//     for(let  i = str.length -1; i>=0; i--){
 //         reversed = reversed + str[i]
 //     }
 
@@ -79,6 +79,9 @@
 
 // Solution 2: Using every() Method
 
+
+
+
 // 3. Remove Duplicates from a String in JavaScript
 
 // Solution 1: Using Set() and join() (ES6 Method)
@@ -98,27 +101,25 @@
 
 // console.log(removeDuplicates("banana"))
 
+
+
 //number of occurance
 
 // function countOccurences(str){
-//   return str.split("").reduce((acc, char)=>{
+  
+//   return str.toLowerCase().split("").reduce((acc, char)=>{
+
+      // if(char === ''){
+      //    return acc
+      // }
 //     acc[char] = (acc[char] || 0) + 1
 //     return acc
 //   }, {})
 // }
 
-// console.log(countOccurences('javascriptttt'))
+// console.log(countOccurences('Javascriptttt I love You'))
 
-// function countOcurence(str){
-//  return str.split("").reduce((acc, char)=>{
 
-//     acc[char] = (acc[char] || 0) + 1/
-
-//     return acc
-//  },{})
-// }
-
-// console.log(countOcurence("jjjjjavaScript"))
 
 //6. Reverse Words in a Sentence in JavaScript (Simplified and Explained)
 
@@ -143,6 +144,8 @@
 // console.log(reverseWord("Hello Javascript fun"))
 // console.log(reverseWord("JavaScript is fun"))
 
+
+
 // 7. Check if Two Strings are Anagrams in JavaScript (Simplified and Explained)
 
 // function isAnagram(str1,str2){
@@ -161,6 +164,8 @@
 // console.log(isAnagram("triangle", "integral")); // true
 // console.log(isAnagram("rat", "car"));          // false
 
+
+
 //find all substrings
 
 // function findAllSubstrings(str){
@@ -178,6 +183,9 @@
 
 // console.log(findAllSubstrings("abc"));     // ["a", "ab", "abc", "b", "bc", "c"]
 // console.log(findAllSubstrings("dog"));     // ["d", "do", "dog", "o", "og", "g"]
+
+
+
 
 // const p1 = Promise.resolve(1);
 // const p2 = Promise.resolve(2);
@@ -315,7 +323,7 @@
 // const sumofPositive = numbers.filter((num)=> num > 0).reduce((sum, num)=> sum + num, 0)
 
 // console.log(sumofPositive);
-
+  
 //? sepreation for easy debug
 // function sumofPositive(arr){
 //    const filteredNum = arr.filter((num) => num > 0);
@@ -426,6 +434,8 @@
 // const fruits = ["banana", "apple", "cherry", "date"];
 // console.log(sortString(fruits));
 
+  
+
 //? Using .sort() with custom compare function
 
 // function sortString(arrofStr){
@@ -527,17 +537,17 @@
 
 
 
-//? Method 2: Using split() and reduce()
+// //? Method 2: Using split() and reduce()
 
-function countChar(str){
-  const result  = str.split("").reduce((acc,char)=>{
-   acc[char] = (acc[char] || 0) + 1
-   return acc
-  },{})
+// function countChar(str){
+//   const result  = str.split("").reduce((acc,char)=>{
+//    acc[char] = (acc[char] || 0) + 1
+//    return acc
+//   },{})
 
-  return result
-}
+//   return result
+// }
 
 
-const str = "hello world";
-console.log(countChar(str))
+// const str = "hello world";
+// console.log(countChar(str))

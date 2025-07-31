@@ -42,7 +42,7 @@
 
 // //? using concat method of array
 
-// function comninationOfArr(arr1, arr2){
+// function comninationOfArr(arr1, arr2, arr3){
 //  return arr1.concat(arr2, arr3)
 // }
 
@@ -111,11 +111,7 @@
 
 //todo 6. Write a function that returns the length of a given object (number of keys).
 
-// const dummyObj = {
-//     name : "Prasad",
-//     age:27,
-//     city:"Pusad"
-// } 
+
 
 // function getLengthOfKey(obj){
 // return Object.keys(obj)
@@ -139,7 +135,7 @@
 //     },
 //     {
 //         name:'Sanika',
-//         gender:"female"
+//         gender:"female"      
 //     },
 //     {
 //         name: 'Prathamesh',

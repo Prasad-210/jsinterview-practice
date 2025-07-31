@@ -57,7 +57,7 @@ const cartoonData = {
 
 
 //extracting arrays from objects
-// console.log(cartoonData.famousCharacters);S
+//console.log(cartoonData.famousCharacters);
 
 
 //Assigning another name(like nick names)

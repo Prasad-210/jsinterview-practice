@@ -41,6 +41,15 @@
 //   areas.push(area)
 // }
 
+// const redius = [1,2,3,4,5];
+// const areas = []
+
+// for(let i=0; i < redius.length ; i++){
+//    const area = Math.PI * redius[i] * redius[i]
+
+//    areas.push(area)
+// }
+// console.log(areas)
 
 // console.log(areas)
 
@@ -199,6 +208,7 @@
 // }
 
 
+
 // fetchData().then(
 //     data =>{
 //         console.log("Data: ", data)
@@ -307,6 +317,8 @@
 //       }
 //     }
 // }
+
+
 
 
 
@@ -422,12 +434,12 @@
 // }
 
 //callback
-// function welcome(){
+// function welcomefun(){
 //     console.log("Welcome to JavaScript bhai !!");  
 // }
 
 
-// greet("Name", welcome)
+// greet("Suraj", welcomefun)
 
 //*? output
 //  Welcome to JavaScript bhai !!
@@ -547,9 +559,9 @@
 // let answers = [];
 
 // for(let i=0; i < words.length; i++){
-//     // if(words[i].length > 6){
-//     //     answers.push(words[i])
-//     // }
+    // if(words[i].length > 6){
+    //     answers.push(words[i])
+    // }
 //     console.log(words[i])
 // }
 
