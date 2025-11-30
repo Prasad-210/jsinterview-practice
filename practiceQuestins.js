@@ -668,17 +668,17 @@
 // console.log(reverArr);
 
 
-let arr = [1,2,3,4,5,5,6,4];
+// let arr = [1,2,3,4,5,5,6,4];
 
-// console.log(arr.length);
+// // console.log(arr.length);
 
-let reversedArr = [];
+// let reversedArr = [];
 
-for(let i = arr.length - 1; i >=0 ; i--){
-  reversedArr.push(arr[i])
-}
+// for(let i = arr.length - 1; i >=0 ; i--){
+//   reversedArr.push(arr[i])
+// }
 
-console.log(reversedArr);
+// console.log(reversedArr);
 
 // let reversedArr2 = [];
 // for (let i = arr.length - 1; i >= 0; i--) {

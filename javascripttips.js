@@ -1,5 +1,4 @@
-// 
-
+//
 
 // const animal = {
 //   eats: true,
@@ -8,11 +7,9 @@
 //   }
 // };
 
-
 // const dog = Object.create(animal)
 // dog.bark = true
 // console.log(dog)
-
 
 // const userProfile = {
 //   name: 'Bob',
@@ -23,7 +20,6 @@
 
 // console.log("output:- ",result1, result2);
 
-
 // for( const key in userProfile){
 //     if( userProfile.hasOwnProperty(key)){
 //         console.log(`Key ${key} :: ${userProfile[key]}`)
@@ -32,28 +28,17 @@
 //     }
 // }
 
-
-
-
 // function debounce(func, delay){
-
-
 //     let timerId ;
 
 //     return function(...args){
-
 //         const context = this;
-
 //         clearTimeout(timerId)
-
 //         timerId = setTimeout(()=>{
 //             func.apply(context, args)
 //         }, delay)
-
 //     }
 // }
-
-
 
 // function search(query){
 //   console.log(`The user search : ${query}`)
@@ -65,7 +50,6 @@
 // debounceSearch("ap")
 // debounceSearch("appl")
 // debounceSearch("apple i phone")
-
 
 //debouncing
 
@@ -85,11 +69,9 @@
 
 // }
 
-
 // function search(query){
 //     console.log(`Searching for query : ${query}`)
 // }
-
 
 // const debounceSearch = debounce(search, 500)
 
@@ -98,38 +80,7 @@
 // debounceSearch("apple")
 // debounceSearch("apple i phone")
 
-
-// function debounce(func , delay){
-
-//     let timeoutId;
-
-//     return function(...args){
-
-//         const context = this;
-
-//         clearTimeout(timeoutId);
-
-//         timeoutId = setTimeout(()=>{
-//              func.apply(context,args)
-//         }, delay)
-//     }
-
-// }
-
-// function search(query){
-//     console.log(`Searching for queryqq : ${query}`)
-// }
-
-
-// const debounceSearch = debounce(search, 500)
-
-// debounceSearch("ap")
-// debounceSearch("app")
-// debounceSearch("appl")
-// debounceSearch("apple i phone")
-
-
-
+// =====================
 
 // function throttle(func, limit){
 //    let inThrottle;
@@ -149,34 +100,29 @@
 //    }
 // }
 
-
 // function hanldeButtonClick(){
 //    console.log("Button Clicked")
 // }
 
-
 // const throttleFunClickHandler = throttle(hanldeButtonClick, 2000)
 
-
 // throttleFunClickHandler()
 // throttleFunClickHandler()
 // throttleFunClickHandler()
 // throttleFunClickHandler()
 // throttleFunClickHandler()
 // throttleFunClickHandler()
-
 
 // setTimeout(()=>{
-//  throttleFunClickHandler()   
+//  throttleFunClickHandler()
 // }, 2400)
 // setTimeout(()=>{
-//  throttleFunClickHandler()   
+//  throttleFunClickHandler()
 // }, 2500)
 
 //throttling
 
 // function throttle(func, limit){
-
 
 //     let inThrottle ;
 
@@ -199,14 +145,12 @@
 //   console.log(`Button Clicked`);
 // }
 
-
 // const throttleFunClickHandler = throttle(handleButtonClick, 2000)
 
 // throttleFunClickHandler()
 // throttleFunClickHandler()
 // throttleFunClickHandler()
 // throttleFunClickHandler()
-
 
 // setTimeout(()=>{
 // throttleFunClickHandler()
@@ -216,17 +160,9 @@
 // throttleFunClickHandler()
 // },2500)
 
-
-
 // const redius = [2,4,6,8];
 
-
-
-// //calacualte circum
-
-
 // const circumfernce  = []
-
 
 // for( let i=0; i < redius.length ; i++){
 //     const circum = 2* Math.PI * redius[i]
@@ -234,12 +170,9 @@
 //     circumfernce.push(circum)
 // }
 
-
 // console.log(circumfernce)
 
-
 // const areafinal  = []
-
 
 // for( let i=0; i < redius.length ; i++){
 //     const area = Math.PI * redius[i] * redius[i]
@@ -247,11 +180,8 @@
 //     areafinal.push(area)
 // }
 
-
 // console.log(areafinal)
-
 // const diameter  = []
-
 
 // for( let i=0; i < redius.length ; i++){
 //     const dia = redius[i] * redius[i]
@@ -259,37 +189,29 @@
 //     diameter.push(dia)
 // }
 
-
 // console.log(diameter)
 
-
-
 //HOF
-
+// const redius = [2,4,6,8];
 // function calculate(arr, logic){
 //   return arr.map(logic)
 // }
 
-
 // const getArea = (r) =>  Math.PI * r * r
-// const getCircum = (r) =>  2* Math.PI * r 
+// const getCircum = (r) =>  2* Math.PI * r
 // const getDiam = (r) =>  r * r
-
 
 // console.log("area", calculate(redius, getArea) )
 // console.log("circum", calculate(redius, getCircum) )
 // console.log("diameter", calculate(redius,getDiam) )
 
-
-
-//iife
+//IIFE
 
 // (function(){
 // console.log("Hii")
 // })()
 
-
-// //closure 
+// //closure
 
 // function outerFunc(){
 
@@ -303,21 +225,16 @@
 //   InnerFun()
 // }
 
-
 // console.log(outerFunc())
-
-
-
 
 // const createBankAccount = (initialBalance) => {
 //    let balance = initialBalance;
 
 //    return {
-
 //     deposite : (amount)=>{
 //         balance += amount;
 
-//         console.log(`The deposite amount is ${amount}   tota;l balnmce is ${balance} `)
+//         console.log(`The deposite amount is ${amount}   total balance is ${balance} `)
 //     },
 
 //     withdraw :  (amount)=>{
@@ -333,19 +250,11 @@
 //    }
 // }
 
-
 // const myAccount = createBankAccount(1000)
-
-
 // myAccount.withdraw(200)
-
 // console.log(myAccount.balance)
 
-
-
-
-//currying 
-
+//currying
 
 // function sendEmail(from){
 //     return function (to){
@@ -361,28 +270,18 @@
 //     }
 // }
 
-
-
 // const fromSender = sendEmail("support@gmail.com")
 // const toReciecer = fromSender("to@user.com")
-
 // const subjectAdd = toReciecer("Welcom to on board")
-
 // const email = subjectAdd("Thanks  for sing up")
 
-
 // console.log(email)
-
-
-
-
-
 
 //Generator function
 
 // function* infiniteSequence(){
 //     let num = 1;
-    
+
 //     while(true){
 //         yield num;
 //         num++
@@ -394,17 +293,14 @@
 // console.log(seq.next().value)
 // console.log(seq.next().value)
 
-
-
 // const dummyObj = {
 //     name : "Prasad",
 //     age:27,
 //     city:"Pusad"
-// } 
+// }
 
 // const output = Object.keys(dummyObj).length
 // console.log(output)
-
 
 // function countOccurences(str){
 //   return str.split("").reduce((acc, char)=>{
@@ -413,8 +309,7 @@
 //   }, {})
 // }
 
-// console.log(countOccurences('javascriptttt'))
-
+// console.log(countOccurences('javascriptt tt  yyy'))
 
 //==========================
 
@@ -424,15 +319,13 @@
 //    }).join('')
 // }
 
-
 // console.log(removeDuplicates("banana"))
-
 
 //==========================
 
-//todo Objects and Prototypes 
+//todo Objects and Prototypes
 
-// Object literal 
+// Object literal
 
 // const Person = {
 //     name : "Dinesh",
@@ -447,7 +340,6 @@
 //     }
 // }
 
-
 // console.log(Person.age)        //23
 // console.log(Person.greet)     //[Function: greet]
 // console.log(Person.greet())  //Hello Mahadev, located at DattaPur
@@ -455,8 +347,7 @@
 
 //========================================================================================================
 
-//todo How do you create objects in JavaScript? 
-
+//todo How do you create objects in JavaScript?
 
 //? Object Literal
 // const obj = {
@@ -466,7 +357,7 @@
 
 // --------------------------------------------------------------------
 
-//? Constructor functions: 
+//? Constructor functions:
 // function Person(name){
 //     this.name = name ;
 // }
@@ -480,13 +371,14 @@
 
 //? Object.create():
 
-// const dummyObj = { greet : function(){
+// const dummyObj = {
+// greet : function(){
 //     return "Hello"
-// }}
+// }
+// }
 
 // const obj = Object.create(dummyObj)
 // console.log(obj.greet())   // Hello
-
 
 // const dummyObj2 = {
 //     greet: function(name){
@@ -496,10 +388,9 @@
 // const obj2 = Object.create(dummyObj2)
 // console.log(obj2.greet("Mithun"))
 
-
 // --------------------------------------------------------------------
 
-//?  ES6 Classes: 
+//?  ES6 Classes:
 
 // class Person{
 //     constructor(name){
@@ -509,10 +400,9 @@
 // const person = new Person("John")
 // console.log(person.name) //john
 
-
 // --------------------------------------------------------------------
 
-//? factory function 
+//? factory function
 
 // function createPerson(name){
 //     return {name}
@@ -521,11 +411,9 @@
 // const person = createPerson("Sasta")
 // console.log(person.name)  //Sasta
 
-
-
 //=========================================================================================
 
-//todo What is the prototype chain? 
+//todo What is the prototype chain?
 
 // const animal = {
 //     makeSound: function(){
@@ -533,11 +421,44 @@
 //     }
 // }
 // const dog = Object.create(animal);
-// dog.makeSound();  // SOME SOUND   //(inherited from animal) 
+// dog.makeSound();  // SOME SOUND   //(inherited from animal)
 
-// //to check prototype chain
+// to check prototype chain
 // console.log(Object.getPrototypeOf(dog) === animal);   //true
 
 // --------------------------------------------------------------------
 
 //todo How does inheritance work in JavaScript?
+
+//todo polyfill Map
+
+// Step 1: Add map to Array prototype if not exists
+if (!Array.prototype.myMap) {
+  Array.prototype.myMap = function (callback, thisArg) {
+    // Step 2: 'this' refers to the array calling myMap
+    if (typeof callback !== "function") {
+      throw new TypeError(callback + " is not a function");
+    }
+
+    const result = []; // Step 3: new array to return
+    const array = this; // Step 4: save reference to current array
+
+    // Step 5: loop through array
+    for (let i = 0; i < array.length; i++) {
+      // Step 6: check if element actually exists (for sparse arrays)
+      if (i in array) {
+        // Step 7: call the callback with proper thisArg
+        result.push(callback.call(thisArg, array[i], i, array));
+      }
+    }
+
+    // Step 8: return new array
+    return result;
+  };
+}
+
+const nums = [1, 2, 3];
+const doubled = nums.myMap((num, i, arr) => num * 2);
+
+console.log(doubled); // [2, 4, 6]
+console.log(nums); // [1, 2, 3] (original unchanged)

@@ -109,7 +109,8 @@ Slight delay before the script starts, but usually not noticeable.
 
 🔥 Sample Answer (Practical Style):
 "In our application, when a user enters their credentials, we send a POST request to the authentication API with the email and password.
-If valid, the backend returns a JWT (JSON Web Token) or session token. We store this token either in localStorage or sessionStorage based on the session type. We then use this token to authenticate future API calls by attaching it to the Authorization header (usually Bearer <token>)."
+If valid, the backend returns a JWT (JSON Web Token) or session token. We store this token either in localStorage or sessionStorage based on the session type. 
+We then use this token to authenticate future API calls by attaching it to the Authorization header (usually Bearer <token>)."
 
 ✅ You can add:
 

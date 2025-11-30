@@ -537,7 +537,6 @@
 
 
 
-
 //todo Throttling and Debouncing
 
 
@@ -566,3 +565,40 @@
 // }
 
 // // console.log(answers )
+
+
+
+// polyfill filter
+
+
+// Array.prototype.myFilter = function(callback, thisArg){
+    
+//     if( typeof callback !== 'function'){
+//         throw new TypeError ("Undefined is not a function")
+//     }
+    
+//     const arr = this;
+//     const newArr = [];
+    
+//   for(let i=0; i< arr.length; i++){
+//       if(i in arr){
+//           const result = callback.call(thisArg, arr[i], i , arr);
+          
+//           if(result){
+//               newArr.push(arr[i])
+//           }
+//       }
+//   }
+  
+//   return newArr
+// }
+
+
+// let arr = [1, 2, 3, 4, , 5];
+
+// const newResult = arr.myFilter((item, i, self)=>{
+//     return item > 2
+// })
+
+// console.log(newResult)
+
